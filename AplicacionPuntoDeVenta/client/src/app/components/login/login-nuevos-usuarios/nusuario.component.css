@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d0b4f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #6a1b9a; /* Cambié el color para un contraste más fuerte */
+    color: #fff;
+    padding: 2.5rem; /* Aumenté el relleno */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 16px rgba(207, 94, 235, 0.5); /* Ajusté el sombreado */
+    width: 100%;
+    max-width: 600px; /* Aumenté el ancho máximo */
+    text-align: center; /* Alinea todo el texto al centro */
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: 2rem; /* Tamaño más grande para el título */
+    font-weight: 700; /* Negrita */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Aumenté el margen entre los elementos del formulario */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.75rem; /* Aumenté el padding */
+    border: none;
+    border-radius: 8px; /* Bordes más redondeados */
+    box-sizing: border-box;
+    font-size: 1rem; /* Tamaño de fuente más consistente */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300; /* Peso de fuente más ligero */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    background-color: #e1bee7;
+    color: #000;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpolygon fill='%235b3d99' points='0,0 10,0 5,5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: 50%;
+    padding-right: 2rem; /* Ajuste para el ícono del dropdown */
+}
+
+button {
+    background-color: #8d6bb6;
+    color: #fff;
+    border: none;
+    font-size: 1rem; /* Tamaño de fuente consistente */
+    padding: 1rem;
+    border-radius: 8px; /* Bordes más redondeados */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem; /* Espaciado superior para separación */
+}
+
+button:hover {
+    background-color: #a08bad;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #d1c4e9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -18,6 +18,8 @@ import { ListaClientesFrecuentesComponent } from './components/hu06-cliente-frec
 import { ProveedoresListComponent } from './components/hu02-proveedores/proveedores-list/proveedores-list.component';
 import { FacturaComponent } from './components/hu01-venta-diaria/factura/factura.component';
 import { DescuentoComponent } from './components/hu01-venta-diaria/descuento/descuento.component';
+import { NUsuarioComponent } from './components/login/login-nuevos-usuarios/nusuario.component';
+
 
 const routes: Routes = [
   {
@@ -95,7 +97,12 @@ const routes: Routes = [
   {
     path:'gestiondescuento',
     component:DescuentoComponent
-  }
+  },
+    { 
+      path: 'login-nuevos-usuarios',
+       component:NUsuarioComponent
+       }
+  
 ];
 
 @NgModule({

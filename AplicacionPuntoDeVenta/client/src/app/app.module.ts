@@ -14,11 +14,13 @@ import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { Hu07NotificacionModule } from './components/hu07-notificacion/hu07-notificacion/hu07-notificacion.module';
 import { ProveedoresService } from './services/proveedores.service';
+import { NUsuarioComponent } from './components/login/login-nuevos-usuarios/nusuario.component';
 @NgModule({
   declarations: [
     AppComponent,
    MenuComponent,
    LoginComponent,
+   NUsuarioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,16 @@
 <!--HU08-CRUD Login (Empleado, Administrador)
 Carol Rios Rios-->
 <div class="container index-page">
-    <h1>Inicio de Sesión</h1>
+    <header class="app-header">
+        <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logotipo Abarrotes" class="app-logo">
+        <h1>PV Abarrotes el Perrón</h1>
+    </header>
+    <h2>Inicio de Sesión</h2>
     <form>
         <input type="text" placeholder="Usuario" required>
         <input type="password" placeholder="Contraseña" required>
         <button type="submit" routerLink="/principal">Iniciar Sesión</button>
+        <button type="button" routerLink="/login-nuevos-usuarios"><i class="fas fa-user-plus"></i> Registrar Nuevo Usuario</button>
         <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
     </form>
 </div>
