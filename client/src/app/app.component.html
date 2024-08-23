@@ -1,0 +1,6 @@
+<div *ngIf="(alerta$| async) as alerta" 
+     [ngClass]="['alerta', 'alerta-' + alerta.type]">
+  {{ alerta.message }}
+</div>
+    <router-outlet/>
+<router-outlet />

@@ -1,0 +1,92 @@
+<!--HU05-CRUD-Inventario Interfaz No.1-->
+<!--Carmen Catalina Delgado Manzano-->
+<div class="navbar">
+  <!-- Logo Redirigiendo al MENU -->
+  <a href="/menu" class="logo-link">
+    <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+  </a>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
+      Ventas & Compras <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+      <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+      <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+      <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
+      Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+      <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+      <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
+      Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+      <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+      <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+      <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
+      Otros <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+      <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Clientes Frecuentes</a>
+    <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
+      <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+      <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+  </div>
+</div>
+
+<!--INVENTARIOS-->
+<div class="inventariosfrecuentes-container">
+  <div class="inventariosfrecuentes-content-wrapper">
+      <div class="inventariosfrecuentes-sidebar">
+          <div class="title-categorias">
+              <h2>Inventarios</h2>
+          </div>
+          <div class="color-body">
+            <div class="radio-options">
+              <div class="crear-inventario-container">
+                <div>
+                  <h2>Crear Inventario</h2>
+                  <form (ngSubmit)="crearInventario(inventarioForm)" #inventarioForm="ngForm" novalidate>
+                    <div>
+                      <label for="fechaInicio">Fecha de Inicio</label>
+                      <input type="date" id="fechaInicio" [(ngModel)]="inventario.fechaInicio" name="fechaInicio" required
+                      #fechaInicio="ngModel">
+                      <div *ngIf="fechaInicio.invalid && (fechaInicio.dirty || inventarioForm.submitted)" class="error">
+                        <div *ngIf="fechaInicio.errors?.['required']">Fecha de Factura es requerida.</div>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="usuario">Usuario</label>
+                      <input type="text" id="usuario" [(ngModel)]="inventario.usuario" name="usuario" required
+                      minlength="6" 
+                    maxlength="6" 
+                   pattern="[A-Z0-9]{6}" 
+                      #usuario="ngModel">
+        <div *ngIf="usuario.invalid && (usuario.dirty || inventarioForm .submitted)" class="error">
+          <div *ngIf="usuario.errors?.['required']">El identificador del usuario es requerido.</div>
+        </div>        
+                    </div>
+                    <div class="buttons">
+                    <button type="submit">Iniciar Inventario</button>
+                  </div>
+                  </form>
+                </div>
+          

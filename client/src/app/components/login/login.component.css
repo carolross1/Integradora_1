@@ -1,0 +1,146 @@
+
+
+.login-container {
+    background-color: #ffffff;
+    padding: 180px;
+    border-radius: 10px; /* Bordes más suaves */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra más definida */
+    text-align: center;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.index-page h1 {
+color: #5b3d99;
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.index-page h2 {
+color: #5b3d99;
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+.index-page .logo {
+width: 100px; /* Tamaño del logo ajustado */
+height: auto;
+margin-bottom: 20px;
+}
+
+.index-page input[type="text"], 
+.index-page input[type="password"] {
+max-width: 700%;
+padding: 20px;
+margin: 10px 0;
+border: 1px solid #ccc;
+border-radius: 9px;
+font-size: 17px;
+box-sizing: border-box;
+width:260%;
+margin-right: 80%;
+margin-left: -80%;
+}
+
+.index-page button {
+background-color: #D291BC; 
+border-color: #D291BC;
+color: #ffffff;
+border-radius: 8px; 
+padding: 20px 20px; 
+font-size: 16px;
+max-width:300%;
+width: 250%;
+margin-left: -9em;
+margin-right: -7em;
+}
+
+.index-page button:hover {
+background-color: #B565A7; 
+border-color: #B565A7;
+}
+
+.index-page .forgot-password,
+.index-page .register {
+display: block;
+margin-top: 10px;
+color: #5b3d99;
+font-size: 14px;
+}
+
+.index-page .forgot-password:hover,
+.index-page .register:hover {
+text-decoration: underline;
+}
+
+.index-page .register {
+margin-top: 20px;
+}
+
+.index-page .register span {
+font-weight: bold;
+color: #b5a1dd;
+}
+
+/*-------------------------------*/
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1e1e1e;
+}
+
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #ffffff 20%, transparent 20%);
+    background-size: 50% 50%;
+    animation: wave 10s infinite linear;
+    opacity: 0.1;
+}
+
+.wave:nth-child(2) {
+    animation-duration: 12s;
+    opacity: 0.15;
+}
+
+.wave:nth-child(3) {
+    animation-duration: 14s;
+    opacity: 0.2;
+}
+
+.wave:nth-child(4) {
+    animation-duration: 16s;
+    opacity: 0.25;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+    100% {
+        transform: translateX(50%) translateY(50%);
+    }
+}
+.error{
+    text-align: left;
+    color: red;
+}

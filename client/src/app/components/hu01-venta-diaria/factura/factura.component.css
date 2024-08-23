@@ -1,0 +1,191 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px; /* Ajusta la altura del logo */
+  width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+
+.dropdown-container a:hover {
+  background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+/* Asegura la responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+/* Otros estilos para el contenido */
+.facturacion-background {
+  background-color: #D8BFD8;
+  font-family: sans-serif;
+}
+
+.datos-container {
+  background-color: #f9f8fa;
+  border: 3px solid rgb(235, 227, 227);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 20px auto;
+  max-width: 90%; 
+  width: 500px; 
+  box-sizing: border-box;
+  max-height: 1500px;
+}
+
+.titulo-centrado {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.etiqueta-bloque {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.entrada-texto, .selector-estados {
+  width: calc(100% - 20px); /* Reduce el ancho para incluir padding */
+  padding: 8px; /* Ajusta el padding para mayor compactación */
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Ajusta el margen para mayor compactación */
+}
+
+/* Contenedor para campos en horizontal */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espaciado entre columnas */
+  margin-bottom: 10px; /* Espaciado entre filas */
+}
+
+.form-row > div {
+  flex: 1;
+  min-width: calc(50% - 10px); /* Ancho mínimo para dos columnas en horizontal */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.boton-accion {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  display: block;
+  margin-top: 0.3em;
+  margin-left: 0;
+}
+.boton-accion:hover{
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  
+}
+
+.btn-purple:hover {
+  background-color: #B565A7; 
+  border-color: #B565A7;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.entrada-texto.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.entrada-texto.ng-touched.ng-valid {
+  border-color: green;
+}
+.readonly{
+  background-color: #f8c2c2; 
+  color: #050505; 
+  cursor: not-allowed; 
+}
+.error {
+  color: red;
+  font-size: 0.85em;
+}
+.alert-danger{
+  color: red;
+  font-weight: bold;
+  font-size: 0.85em;
+}

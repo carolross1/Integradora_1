@@ -1,0 +1,205 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+
+
+.dropdown-container a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-container a:hover {
+  background-color: #b894e6;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+/* ESTILOS INVENTARIOS */
+.inventariosfrecuentes-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 40px; /* Espaciado interno */
+  width: 85%; /* Ancho del contenedor */
+  max-width: 700%; 
+  height: 630px;
+  border-radius: 8px;
+  background-color: #ebe8f1; /* Color de fondo coherente con las otras pantallas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle un poco de profundidad */
+  margin-left: auto; /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
+}
+
+.inventariosfrecuentes-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  max-width: 120%;
+}
+
+.inventariosfrecuentes-sidebar {
+  flex: 1;
+  background-color: #d0b4f1;
+  border-radius: 10px 0 0 10px;
+  padding: 20px;
+  height: 550px;
+  width: 270px;
+}
+
+.title-categorias {
+  text-align: center;
+  font-size: 16px; /* Tamaño del texto reducido para coherencia */
+  font-weight: bold;
+  margin: 20px 0; /* Espacio alrededor del título */
+  color: #48257f; /* Color morado para el título */
+  border: 2px solid #5b3d99; /* Borde morado para coherencia */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.crear-inventario-container label {
+  font-size: 14px;
+  color: #000; /* Color negro para el texto de las etiquetas */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.crear-inventario-container input[type="date"],
+.crear-inventario-container input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  height: 70px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #bdc3c7;
+  font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.color-body {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventariosfrecuentes-main-content {
+  flex: 3;
+  padding: 20px;
+}
+
+.inventariosfrecuentes-main-content h2 {
+  font-size: 24px; /* Tamaño del texto coherente con otras pantallas */
+  color: #5b3d99; /* Color morado */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.conteiner-articulos {
+  margin-bottom: 20px;
+}
+
+.inventory-table th {
+  background-color: #5b3d99;
+  color: white;
+}
+
+.table-footer {
+  background-color: #f2f2f2;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buttons button {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+
+.buttons button:hover {
+  background-color: #B565A7; 
+  border-color: #B565A7;
+}
+
+.error {
+  color: red;
+  font-size: 0.85em;
+}

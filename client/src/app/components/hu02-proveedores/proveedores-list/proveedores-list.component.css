@@ -1,0 +1,291 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 8px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 8px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  z-index: 1;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.dropdown-container a {
+  display: block;
+  padding: 8px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown-container a:hover {
+  background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+/* Estilos para los mensajes de advertencia */
+.invalid-feedback {
+  color: #d9534f; /* Color de advertencia */
+  font-size: 0.875em; /* Tamaño de fuente ligeramente más pequeño */
+  margin-top: 4px;
+}
+
+/* Estilos para los botones de búsqueda y agregar */
+.search-button, .add-button {
+  background-color: #5b3d99; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover, .add-button:hover {
+  background-color: #4a2a7e; /* Color de fondo del botón al pasar el ratón */
+}
+/* Botón de agregar */
+.add-button {
+  background-color: #5b3d99; /* Color de fondo */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 120px; /* Ancho mínimo del botón */
+  margin-left: 20px; /* Espacio a la izquierda del botón */
+  margin-top: 54px; /* Espacio superior para separar del contenedor */
+}
+
+.add-button:hover {
+  background-color: #48257f; /* Color de fondo al pasar el mouse */
+}
+/* Estilos para los inputs del formulario */
+.search-input, .edit-input, .add-input {
+  padding: 8px;
+  border: 1px solid #a790cf; /* Color del borde */
+  border-radius: 4px;
+  background-color: #ccbaef; /* Color de fondo */
+  margin-right: 10px; /* Espacio entre los inputs */
+}
+
+/* Estilos para el contenedor del formulario de agregar */
+.add-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los elementos */
+  align-items: center;
+}
+
+/* Ajustes para los inputs en el contenedor de agregar */
+.add-input {
+  flex: 1; /* Ocupa el espacio disponible */
+  min-width: 150px; /* Ancho mínimo de los inputs */
+  margin-right: 0; /* Espacio entre los inputs */
+}
+
+/* Botón de agregar */
+.add-button {
+  background-color: #5b3d99; /* Color de fondo */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 100px; /* Ancho mínimo del botón */
+  margin-left: 20px; /* Espacio adicional a la izquierda del botón */
+}
+
+.add-button:hover {
+  background-color: #48257f; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para la tabla de proveedores */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #5b3d99; /* Color de fondo para el encabezado */
+  color: white;
+  text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para los botones de editar y eliminar */
+.edit-button, .delete-button, .save-button {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button:hover, .delete-button:hover, .save-button:hover {
+  background-color: #4a2a7e; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilos específicos para botones */
+.save-button {
+  background-color: #28a745;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.edit-button {
+  background-color: #007bff;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Asegurando la responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Estilos para el contenedor principal y de búsqueda */
+.main-container, .container {
+  margin-top: 80px; /* Espacio superior para evitar sobreposición con la barra de navegación */
+  padding: 15px; /* Reducción del padding para ajustar tamaño */
+  background-color: #f5f5f5; /* Fondo claro para contraste */
+  width: 90%; /* Ajuste de ancho */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  margin-left: auto; /* Centrando horizontalmente */
+  margin-right: auto; /* Centrando horizontalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  flex-direction: column; /* Colocar los elementos en columna */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  justify-content: center; /* Centrar verticalmente el contenido */
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #48257f; /* Color del texto */
+}
+
+.search-container, .add-container {
+  margin-bottom: 15px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #a790cf; /* Color del borde */
+  border-radius: 4px;
+  width: 85%;
+  font-size: 14px;
+  margin-right: 8px;
+  background-color: #ccbaef; /* Color de fondo */
+}
+
+.search-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+ background-color: #5b3d99; /* Color de fondo */
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.search-button i {
+  margin-right: 5px;
+}
+
+.search-button:hover {
+  background-color: #48257f; /* Color de fondo al pasar el mouse */
+}

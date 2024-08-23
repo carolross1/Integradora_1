@@ -1,0 +1,259 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+
+/* Estilos para el logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+
+
+.dropdown-container a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-container a:hover {
+  background-color: #b894e6;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+.factura-list-container {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 4em;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+ 
+.edit-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+
+.edit-icon{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #95dc8d;
+}
+.edit-icon:hover{
+  background-color: #a1c96d;
+}
+
+.btn-purple {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  display: block;
+  margin-top: 2em;
+  margin-left: 0;
+}
+.btn-danger{
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  
+}
+
+.btn-purple:hover {
+  background-color: #B565A7; 
+  border-color: #B565A7;
+}
+/* Estilos generales para la lista de facturas */
+.factura-list-container {
+ 
+  margin-top: 90px; /* Espacio superior para evitar sobreposición con la barra de navegación */
+  padding: 20px; /* Aumento del padding para mejor espacio interno */
+  background-color: #f5f5f5; /* Fondo claro para contraste */
+  width: 95%; /* Ajusta el ancho del contenedor */
+  max-width: 1500px; /* Ancho máximo para un tamaño más contenido */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  margin-left: auto; /* Centrando horizontalmente */
+  margin-right: auto; /* Centrando horizontalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  flex-direction: column; /* Colocar los elementos en columna */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  justify-content: center; /* Centrar verticalmente el contenido */
+  
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #48257f; /* Color del texto */
+}
+table {
+  width: 90%;
+  margin-top: 20px;
+  border: 2px;
+}
+
+thead th {
+  background-color: #8d5ec0;  
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+td button {
+  margin-right: 5px;
+}
+
+.edit-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+

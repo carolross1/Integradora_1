@@ -1,0 +1,221 @@
+<div class="navbar">
+  <!-- Logo Redirigiendo al Inicio de Sesión -->
+  <a href="/menu" class="logo-link">
+    <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+  </a>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
+      Ventas & Compras <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+      <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+      <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+      <a routerLink="/formulariofactura"><i class="fas fa-file-invoice"></i> Factura</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
+      Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+      <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+      <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
+      Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+      <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+      <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+      <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
+      Otros <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+     <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
+      <a routerLink="/listausuario"><i class="fas fa-percentage"></i> Agregar usuario</a>
+      <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+      <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+  </div>
+</div>
+
+<div class="datos-container">
+  <h2 class="titulo-centrado">Datos de Facturación</h2>
+  <form (ngSubmit)="onSubmit(facturaForm)" #facturaForm="ngForm" novalidate>
+    <div class="form-row">
+      <div>
+        <label class="etiqueta-bloque" for="Numero de Ticket">Número de Ticket:</label>
+        <input type="text" id="Numero de Ticket" name="Numero de Ticket" class="entrada-texto"  
+    [(ngModel)]="factura.id_Venta"
+    (ngModelChange)="actualizarTotal()" required
+    [ngClass]="{'readonly': isEditing}"
+    minlength="8" 
+    maxlength="8"
+    pattern="TKT-\d{4}" 
+    #numeroDeTicket="ngModel">
+          <div *ngIf="numeroDeTicket.invalid && (numeroDeTicket.dirty || facturaForm.submitted)" class="error">
+            <div *ngIf="numeroDeTicket.errors?.['required']">Número de Ticket es requerido.</div>
+            <div *ngIf="numeroDeTicket.errors?.['minlength'] || numeroDeTicket.errors?.['maxlength']">Número de Ticket debe tener exactamente 8 caracteres.</div>
+            <div *ngIf="numeroDeTicket.errors?.['pattern']">Número de Ticket debe seguir el formato TKT-0000.</div>
+          </div>
+        </div>
+        <div>
+        <label class="etiqueta-bloque" for="rfc">RFC:</label>
+        <input type="text" id="rfc" name="rfc" class="entrada-texto" [(ngModel)]="factura.RFC" required
+        minlength="12" 
+        maxlength="12" 
+        pattern="[A-Z0-9]{12}" 
+        #rfc="ngModel">
+        <div *ngIf="rfc.invalid && (rfc.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="rfc.errors?.['required']">RFC es requerido.</div>
+          <div *ngIf="rfc.errors?.['pattern']">RFC debe seguir el formato correcto (e.g., ABCD123456EFG).</div>
+        </div>        
+      </div>
+      </div>
+    <div class="form-row">
+      <div>
+        <label class="etiqueta-bloque" for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="entrada-texto" [(ngModel)]="factura.nombre" required
+        minlength="1"
+        #nombre="ngModel">
+        <div *ngIf="nombre.invalid && (nombre.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="nombre.errors?.['required']">Nombre es requerido.</div>
+          <div *ngIf="nombre.errors?.['minlength']">Nombre debe tener al menos 1 carácter.</div>
+        </div>
+    </div>
+    <div>
+        <label class="etiqueta-bloque" for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" class="entrada-texto" [(ngModel)]="factura.apellidos" required
+        minlength="1"
+        #apellidos="ngModel">
+        <div *ngIf="apellidos.invalid && (apellidos.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="apellidos.errors?.['required']">Apellidos son requeridos.</div>
+          <div *ngIf="apellidos.errors?.['minlength']">Apellidos deben tener al menos 1 carácter.</div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label class="etiqueta-bloque" for="estado">Estado:</label>
+        <select id="estado" name="estado" class="selector-estados" [(ngModel)]="factura.estado" required #estado="ngModel">
+          <option value="">Selecciona un estado</option>
+          <option value="AGU">AGUASCALIENTES</option>
+          <option value="BCN">BAJA CALIFORNIA</option>
+          <option value="BCS">BAJA CALIFORNIA SUR</option>
+          <option value="CAM">CAMPECHE</option>
+          <option value="CHP">CHIAPAS</option>
+          <option value="CHH">CHIHUAHUA</option>
+          <option value="COA">COAHUILA</option>
+          <option value="COL">COLIMA</option>
+          <option value="DUR">DURANGO</option>
+          <option value="GTO">GUANAJUATO</option>
+          <option value="GRO">GUERRERO</option>
+          <option value="HID">HIDALGO</option>
+          <option value="JAL">JALISCO</option>
+          <option value="MEX">MÉXICO</option>
+          <option value="MIC">MICHOACÁN</option>
+          <option value="MOR">MORELOS</option>
+          <option value="NAY">NAYARIT</option>
+          <option value="NLE">NUEVO LEÓN</option>
+          <option value="OAX">OAXACA</option>
+          <option value="PUE">PUEBLA</option>
+          <option value="QUE">QUERÉTARO</option>
+          <option value="QUI">QUINTANA ROO</option>
+          <option value="SLP">SAN LUIS POTOSÍ</option>
+          <option value="SIN">SINALOA</option>
+          <option value="SON">SONORA</option>
+          <option value="TAB">TABASCO</option>
+          <option value="TAM">TAMAULIPAS</option>
+          <option value="TLA">TLAXCALA</option>
+          <option value="VER">VERACRUZ</option>
+          <option value="YUC">YUCATÁN</option>
+          <option value="ZAC">ZACATECAS</option>
+        </select>
+        <div *ngIf="estado.invalid && (estado.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="estado.errors?.['required']">Estado es requerido.</div>
+        </div>
+        
+      </div>
+      <div>
+        <label class="etiqueta-bloque" for="municipio">Municipio:</label>
+        <input type="text" id="municipio" name="municipio" class="entrada-texto" [(ngModel)]="factura.municipio" required
+        minlength="5"
+          #municipio="ngModel">
+          <div *ngIf="municipio.invalid && (municipio.dirty || facturaForm.submitted)" class="error">
+            <div *ngIf="municipio.errors?.['required']">Municipio es requerido.</div>
+            <div *ngIf="municipio.errors?.['minlength']">Municipio debe tener al menos 5 carácter.</div>
+          </div>
+          
+        </div>
+      </div>
+    <div class="form-row">
+      <div>
+        <label class="etiqueta-bloque" for="cp">Código Postal:</label>
+        <input type="text" id="cp" name="cp" class="entrada-texto" [(ngModel)]="factura.codigo_Postal" required
+        minlength="5" 
+        maxlength="5" 
+        pattern="\d{5}" 
+        #cp="ngModel">
+        <div *ngIf="cp.invalid && (cp.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="cp.errors?.['required']">Código Postal es requerido.</div>
+          <div *ngIf="cp.errors?.['minlength'] || cp.errors?.['maxlength']">Código Postal debe tener exactamente 5 caracteres.</div>
+          <div *ngIf="cp.errors?.['pattern']">Código Postal debe ser numérico con 5 dígitos.</div>
+        </div>        
+      </div>
+      </div>
+      <div>
+        <label class="etiqueta-bloque" for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" class="entrada-texto" [(ngModel)]="factura.direccion" required
+        minlength="5" 
+        maxlength="40" 
+        #direccion="ngModel">
+        <div *ngIf="direccion.invalid && (direccion.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="direccion.errors?.['required']">Dirección es requerida.</div>
+          <div *ngIf="direccion.errors?.['minlength']">Dirección debe tener al menos 5 caracteres.</div>
+        </div>        
+      </div>
+    <div class="form-row">
+      <div>
+        <label class="etiqueta-bloque" for="fechaFactura">Fecha Factura:</label>
+        <input type="datetime-local" id="fechaFactura" name="fechaFactura" class="entrada-texto" [(ngModel)]="factura.fecha_Factura" required
+        #fechaFactura="ngModel">
+        <div *ngIf="fechaFactura.invalid && (fechaFactura.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="fechaFactura.errors?.['required']">Fecha de Factura es requerida.</div>
+        </div>
+        
+      </div>
+      </div>
+      <div>
+        <label class="etiqueta-bloque" for="total">Total:</label>
+        <input type="number" id="total" name="total" class="entrada-texto" [(ngModel)]="factura.total" required 
+        readonly="isEditing"
+        [ngClass]="{'readonly': isEditing}"
+        #total="ngModel">
+        <div *ngIf="total.invalid && (total.dirty || facturaForm.submitted)" class="error">
+          <div *ngIf="total.errors?.['required']">Total es requerido.</div>
+        </div>        
+      </div>
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    <div class="form-buttons">
+      <button type="button" class="boton-accion" routerLink="/facturas" [ngClass]="{isEditing}">Cancelar</button>
+
+      <button type="submit"  class="boton-accion" [ngClass]="{'btn-update': isEditing, 'btn-create': !isEditing}">
+        {{ isEditing ? 'Actualizar Factura' : 'Generar Factura' }}
+      </button>
+    </div>
+  </form>
+  </div>

@@ -1,0 +1,129 @@
+<!--HU03-CRUD-Corte de caja
+Carmen Catalina Delgado Manzano-->
+<div class="navbar">
+
+    <!-- Logo Redirigiendo al MENU -->
+    <a href="/menu" class="logo-link">
+      <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+    </a>
+    
+    <div class="nav-group">
+      <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
+        Ventas & Compras <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+        <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+        <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+        <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
+      </div>
+    </div>
+    
+    <div class="nav-group">
+      <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
+        Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+        <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+        <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+      </div>
+    </div>
+    
+    <div class="nav-group">
+      <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
+        Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+        <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+        <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+        <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+      </div>
+    </div>
+    
+    <div class="nav-group">
+      <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
+        Otros <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+       <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
+      <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
+        <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+        <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+        <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--CORTE DE CAJA-->
+
+  <div class="centered-container">
+    <div class="corte-caja-container card">
+      <div class="card-header">CORTE DE CAJA</div>
+      <div class="card-body center-content">
+        <form (ngSubmit)="iniciarCorte()">
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control" id="fecha" [(ngModel)]="fecha" name="fecha">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Hora</label>
+            <input type="time" class="form-control" id="hora_Inicio" [(ngModel)]="hora_Inicio" name="hora_Inicio">
+          </div>
+        <div class="form-group">
+          <label for="id_Usuario">Clave Empleado</label>
+          <input type="text" class="form-control" id="id_Usuario" [(ngModel)]="id_Usuario" name="id_Usuario">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="id_Venta_Primero">Monto inicial</label>
+            <input type="number" class="form-control" id="monto_Inical" [(ngModel)]="saldo_Inicial"name="saldo_Inicial" min="0" required >
+            <div *ngIf="saldo_Inicial < 0" class="error">
+              <small>El monto inicial no puede ser negativo.</small>
+            </div>
+            <div *ngIf="saldo_Inicial === null || saldo_Inicial === undefined" class="error">
+              <small>El monto inicial es requerido. <p>
+                *solo se aceptan números*
+              </small>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-purple btn-block" [disabled]="saldo_Inicial < 0" >Iniciar Corte</button>
+        <button *ngIf="isCorteAbierto" (click)="cerrarUltimoCorte()" class="btn btn-danger">Cerrar Último Corte</button>
+    </form>
+ <!-- <button (click)="obtenerCorteActual()">Obtener Corte Actual</button>-->
+  <div *ngIf="showCorteDetails" class="container corte-caja-container card">
+
+    <div class="card-header">Corte Actual</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID del Usuario:</th>
+                <th>Fecha:</th>
+                <th>Hora de Inicio:</th>
+                <th>Hora DE TERMINO: </th>
+                <th>Saldo Inicial:</th>
+                <th>ingresos:</th>
+                <th>egresos:</th>
+                <th>Saldo FINAL: </th>
+              
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{ corteActual.id_Usuario }}</td>
+    <td>{{ corteActual.fecha}}</td>
+    <td>{{ corteActual.hora_Inicio  }}</td>
+    <td>{{ corteActual.hora_Fin }}</td>
+    <td>{{ corteActual.saldo_Inicial | currency }}</td>
+    <td>{{ corteActual.ingresos | currency }}</td>
+    <td>{{corteActual.egresos | currency }}</td>
+    <td>{{ corteActual.saldo_Final| currency }}</td>
+   
+</tr>
+</tbody>
+</table>
+<button type="button" class="btn btn-purple btn-block" (click)="closeReport()">Salir</button>
+</div>
+</div>
+</div>

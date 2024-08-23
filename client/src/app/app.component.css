@@ -1,0 +1,33 @@
+.alerta {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    color: white;
+    text-align: center;
+    padding: 1em 2em;
+    z-index: 1000;
+    font-size: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .alerta-success {
+    background-color: #28a745; /* Color verde para éxito */
+  }
+  
+  .alerta-error {
+    background-color: #dc3545; /* Color rojo para error */
+  }
+  
+  .alerta-warning {
+    background-color: #d4792a; /* Color amarillo para advertencias */
+  }
+  
+  /* Efecto al pasar el cursor sobre la alerta */
+  .alerta:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.25);
+  }

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const categoriaControllers_1 = require("../controllers/categoriaControllers");
+const router = (0, express_1.Router)();
+router.get('/', categoriaControllers_1.getCategorias);
+router.post('/', categoriaControllers_1.addCategoria);
+router.delete('/:idCategoria', categoriaControllers_1.deleteCategoria);
+router.put('/:idCategoria', categoriaControllers_1.updateCategoria);
+exports.default = router;

@@ -1,0 +1,161 @@
+
+<div class="navbar">
+  <!-- Logo Redirigiendo al Inicio de Sesión -->
+  <a href="/menu" class="logo-link">
+      <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+  </a>
+<div class="navbar">
+  <div class="nav-group">
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['ventas-compras']}" 
+      (click)="toggleDropdown('ventas-compras')"
+    >
+      Ventas & Compras
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['ventas-compras']"
+    >
+      <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+      <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+      <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" 
+      (click)="toggleDropdown('proveedores-entregas')"
+    >
+      Proveedores & Entregas
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['proveedores-entregas']"
+    >
+      <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+      <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" 
+      (click)="toggleDropdown('inventarios-reportes')"
+    >
+      Inventarios & Reportes
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['inventarios-reportes']"
+    >
+      <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+      <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+      <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button 
+      class="dropdown-btn" 
+      [ngClass]="{'active': dropdownOpen['otros']}" 
+      (click)="toggleDropdown('otros')"
+    >
+      Otros
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <div 
+      class="dropdown-container" 
+      *ngIf="dropdownOpen['otros']"
+    >
+     <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
+      <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
+      <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+      <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+  <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_Usuario">ID Usuario:</label>
+      <input id="id_Usuario" formControlName="id_Usuario"  [readonly]="isEdit"  [ngClass]="{'highlighted': isEdit}" />
+      <div *ngIf="createUserForm.get('id_Usuario')?.invalid && (createUserForm.get('id_Usuario')?.touched || createUserForm.get('id_Usuario')?.dirty)">
+        <small *ngIf="createUserForm.get('id_Usuario')?.errors?.['required']">ID Usuario es obligatorio.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="nombre" autocomplete="off">Nombre:</label>
+      <input id="nombre" formControlName="nombre" />
+      <div *ngIf="createUserForm.get('nombre')?.invalid && (createUserForm.get('nombre')?.touched || createUserForm.get('nombre')?.dirty)"class="error-message">
+        <small *ngIf="createUserForm.get('nombre')?.errors?.['required']">Nombre es obligatorio.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input id="apellido" formControlName="apellido" />
+      <div *ngIf="createUserForm.get('apellido')?.invalid && (createUserForm.get('apellido')?.touched || createUserForm.get('apellido')?.dirty)"class="error-message">
+        <small *ngIf="createUserForm.get('apellido')?.errors?.['required']">Apellido es obligatorio.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" formControlName="telefono" />
+      <div *ngIf="createUserForm.get('telefono')?.invalid && (createUserForm.get('telefono')?.touched || createUserForm.get('telefono')?.dirty)"class="error-message">
+        <small *ngIf="createUserForm.get('telefono')?.errors?.['required']">Teléfono es obligatorio.</small>
+        <small *ngIf="createUserForm.get('telefono')?.errors?.['pattern']">Teléfono debe ser un número válido de 10 a 13 dígitos.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" />
+      <div *ngIf="createUserForm.get('email')?.invalid && (createUserForm.get('email')?.touched || createUserForm.get('email')?.dirty)"class="error-message">
+        <small *ngIf="createUserForm.get('email')?.errors?.['required']">Email es obligatorio.</small>
+        <small *ngIf="createUserForm.get('email')?.errors?.['email']">Email no es válido.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="contrasena">Contraseña:</label>
+      <input id="contrasena" type="password" formControlName="contrasena" />
+      <div *ngIf="createUserForm.get('contrasena')?.invalid && (createUserForm.get('contrasena')?.touched || createUserForm.get('contrasena')?.dirty)"class="error-message"class="error-message">
+        <small *ngIf="createUserForm.get('contrasena')?.errors?.['required']">Contraseña es obligatoria.</small>
+        <small *ngIf="createUserForm.get('contrasena')?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres.</small>
+        <small *ngIf="createUserForm.get('contrasena')?.errors?.['pattern']">La contraseña debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="tipo_Usuario">Tipo de Usuario:</label>
+      <select id="tipo_Usuario" formControlName="tipo_Usuario">
+        <option value="">Seleccione un tipo de usuario</option>
+        <option value="Usuario">Empleado</option>
+        <option value="Admin">Admin</option>
+      </select>
+      <div *ngIf="createUserForm.get('tipo_Usuario')?.invalid && (createUserForm.get('tipo_Usuario')?.touched || createUserForm.get('tipo_Usuario')?.dirty)"class="error-message">
+        <small *ngIf="createUserForm.get('tipo_Usuario')?.errors?.['required']">Tipo de Usuario es obligatorio.</small>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="errorMessage">
+        <p class="error">{{ errorMessage }}</p>
+      </div>
+      <button type="submit">
+        {{ isEdit ? 'Actualizar Usuario' : 'Registrar Usuario' }}
+      </button>
+      <button type="button" class="cancelar" (click)="cancel()">Cancelar</button>
+    </div>
+  
+  </form>

@@ -1,0 +1,231 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+  }
+  
+  /* Estilos para el logo */
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99;
+    padding: 10px;
+  }
+  
+  .nav-group {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .dropdown-btn {
+    background-color: #5b3d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+  
+  .dropdown-btn i {
+    margin-left: 5px;
+  }
+  
+  .dropdown-container {
+    display: none;
+    background-color: #d0b4f1;
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+
+  .dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+}
+
+  
+  .dropdown-container a:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-container a:hover {
+    background-color: #b894e6;
+  }
+  
+  .dropdown-btn.active + .dropdown-container {
+    display: block;
+  }
+/* Estilos INVENTARIOS FRECUENTES */
+.inventariosfrecuentes-container {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    background-color: #f4f4f4;
+    width: 90%;
+    max-width: 140%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inventariosfrecuentes-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
+.inventariosfrecuentes-main-content h2 {
+    font-size: 24px; 
+    color: #5b3d99; 
+    
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.inventariosfrecuentes-sidebar .radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.inventariosfrecuentes-main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px); /* Ajusta esta altura según sea necesario */
+}
+
+.inventariosfrecuentes-main-content h2 {
+    margin-top: 0;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    
+}
+
+.inventory-table th {
+  width: 12%;
+  background-color: #8d5ec0; 
+    color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.inventory-table td {
+    border: 1px solid #ccc;
+    padding: 9px;
+    text-align: left;
+}
+/* Estilo para el input dentro de la tabla */
+.inventory-table input[type="number"] {
+  width: 100%; 
+  padding: 5px; 
+  border: 2px solid #e8dede; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  font-size: 29px; 
+}
+
+.inventory-table input[type="number"]:focus {
+  border-color: #b565a7; 
+  outline: none; 
+}
+
+
+
+
+.form-group label {
+  font-size: 19px; 
+}
+
+
+.buttons {
+    display: flex;
+    justify-content:right;
+    margin-top: 20px;
+    padding: 10px;
+    
+}
+.form-control {
+  width: 90%;
+  height: 40%;
+  padding: 14px;
+  border-radius: 4px;
+  border: 3px solid #e8dede;
+  border-radius: 10px;
+  display: block;
+  font-size: 0.7em;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 19px;
+}
+
+.buttons button:hover {
+    background-color: #B565A7; 
+  border-color: #B565A7;
+}
+
+.buttons button:last-child {
+    margin-right: 0;
+}
+
+.btn-purple {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  border-radius: 8px; 
+  padding: 8px 20px; 
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+.btn-purple:hover {
+  background-color: #B565A7; 
+  border-color: #B565A7;
+}
+
+.conteiner-articulos {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 20px;
+}

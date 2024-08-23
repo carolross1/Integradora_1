@@ -1,0 +1,117 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+
+.dropdown-container a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-container a:hover {
+  background-color: #b894e6;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+.factura-detail-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 02px5pxrgba(0, 0, 0, 0.1);
+    margin-top: 3em;
+    margin-left: 50%;
+    margin-right: 90px;
+    /*CCAMBIEMOS*/ 
+ 
+  }
+  
+  .factura-detail-containerul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .factura-detail-containerli {
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px; 
+    background-color: #D291BC; 
+    border-color: #D291BC;
+    border-radius: 3px;
+    cursor: pointer;
+    border-radius: 8px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    margin-top: 2em;
+  }
+  
+  button:hover {
+    background-color: #B565A7; 
+    border-color: #B565A7;
+  }
+  
+  button:active {
+    background-color: #003d7a;
+  }

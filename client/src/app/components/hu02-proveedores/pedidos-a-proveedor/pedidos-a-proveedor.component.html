@@ -1,0 +1,157 @@
+<div class="navbar">
+  <!-- Logo Redirigiendo al MENU -->
+  <a href="/menu" class="logo-link">
+    <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+  </a>
+
+  <!-- Navegación Principal -->
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
+      Ventas & Compras <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+      <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+      <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+      <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
+      Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+      <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+      <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
+      Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+      <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+      <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+      <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
+      Otros <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+     <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
+      <a routerLink="/gestiondescuento"><i class="fas fa-percentage"></i> Descuento Por Mayoreo</a>
+      <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+      <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+  </div>
+</div>
+<!-- Contenido de Compras -->
+<div class="compras-content">
+  <div class="compras-title">
+    Compras
+  </div>
+
+  <!-- Cabecera de Compras -->
+  <div class="compras-header">
+    <div class="compras-date">
+      Fecha: {{ currentDate | date:'dd/MM/yyyy' }}
+    </div>
+
+    <div class="entregas-recibe">
+      <label>Proveedor</label>
+      <select [(ngModel)]="compra.id_Proveedor" (change)="onProveedorChange($event)" required>
+        <option *ngFor="let proveedor of proveedores" [value]="proveedor.id_Proveedor">
+          {{ proveedor.nombre }}
+        </option>
+        <option value="" disabled selected hidden>Seleccione un proveedor</option>
+      </select>
+      <div *ngIf="!compra.id_Proveedor" class="error-message">
+        Por favor seleccione un proveedor.
+      </div>
+    </div>
+
+    <p>Correo del proveedor: {{ correo }}</p>
+
+
+  <!-- Sección de Código de Barras -->
+  <div class="compra-barcode">
+    <div class="barcode-icon">
+      <i class="fa fa-barcode"></i>
+    </div>
+    <input 
+      type="text" 
+      class="codigo barcode-input" 
+      (keyup.enter)="onEnterKey($event)" 
+      (keyup)="onCodigoBarrasChange($event)" 
+      placeholder="Código de barras"
+      required
+    />
+    <div *ngIf="!cargarProductos.length" class="error-message">
+      Por favor escanee o escriba el código de barras.
+    </div>
+  </div>
+
+  <!-- Tabla de Productos -->
+  <div class="compra-table-content">
+    <div class="compra-table-container">
+      <table class="compra-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of compra.detalles">
+            <td>{{ producto.codigo_Barras }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>
+              <input 
+                type="number" 
+                [(ngModel)]="producto.cantidad" 
+                (change)="calcularTotales()"
+                min="1"
+                required
+              />
+            </td>
+            <td>
+              <input 
+                type="number" 
+                [(ngModel)]="producto.precio" 
+                (change)="calcularTotales()"
+                min="0.01" 
+                step="0.01"
+                required
+              />
+            </td>
+            <td>
+              <button (click)="eliminarProductoDeCompra(producto.codigo_Barras)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Totales y Botones -->
+ 
+  <div class="entregas-totals">
+    <div class="totals-left">
+      <div>Total: {{ totalCompra | currency }}</div>
+    </div>
+
+
+    <div class="compra-buttons">
+      <button (click)="vaciarCompra()">Vaciar Compra</button>
+      <button (click)="registrarPedido()" [disabled]="!isFormValid()">Registrar Compra</button>
+    </div>
+  </div>
+</div>

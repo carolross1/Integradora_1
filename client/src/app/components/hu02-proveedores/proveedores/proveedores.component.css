@@ -1,0 +1,147 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99; /* Color de fondo de la barra de navegación */
+    padding: 10px;
+}
+
+.nav-group {
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-btn {
+    background-color: #5b3d99; /* Color de fondo del botón del desplegable */
+    color: #fff; /* Color del texto */
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn i {
+    margin-left: 5px;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #d0b4f1; /* Color de fondo del contenedor del desplegable */
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc; /* Borde inferior */
+}
+
+.dropdown-container a:hover {
+    background-color: #bfa8e3; /* Color de fondo al pasar el ratón */
+}
+
+.dropdown-btn.active + .dropdown-container {
+    display: block;
+}
+
+/* Estilos para la Página de Registro de Proveedores */
+.provider-container {
+    padding: 20px; /* Espaciado interno ajustado */
+    background-color: #f9f9f9; /* Color de fondo del contenedor */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    max-width: 800px; /* Ajusta el ancho máximo para centrado */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin-top: 60px; /* Ajusta el margen superior para separarlo del navbar */
+}
+
+.provider-container h1 {
+    color: #48257f; /* Color del título */
+    text-align: center; /* Centra el texto del título */
+    margin-bottom: 20px; /* Espaciado inferior del título */
+}
+
+.provider-container form {
+    background-color: #fff; /* Color de fondo del formulario */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 100%; /* Se ajusta al ancho del contenedor */
+}
+
+.provider-container table {
+    width: 100%; /* La tabla ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Quita los espacios entre las celdas */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.provider-container th,
+.provider-container td {
+    border: 1px solid #ccc; /* Borde ligero */
+    padding: 10px; /* Relleno interno */
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+.provider-container th {
+    background-color: #5b3d99; /* Fondo de la cabecera de la tabla */
+    color: white; /* Color del texto de la cabecera */
+}
+
+.provider-container .left-cell {
+    background-color: #5b3d99; /* Color de fondo para las celdas del lado izquierdo */
+    color: #fffdfd; /* Color del texto de las celdas */
+    font-style:normal;
+}
+
+.provider-container .form-control {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+    margin: 5px 0; /* Espaciado vertical */
+}
+
+.provider-container .button-group {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 10px; /* Espaciado entre los botones */
+    margin-top: 20px; /* Espaciado superior para los botones */
+}
+
+.provider-container .validate-btn {
+    background-color: #5b3d99; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 20px; /* Relleno interno */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Muestra un cursor de mano */
+}
+
+.provider-container .validate-btn:hover {
+    background-color: #48257f; /* Color de fondo al pasar el ratón */
+}

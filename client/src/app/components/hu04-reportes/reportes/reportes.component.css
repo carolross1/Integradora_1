@@ -1,0 +1,169 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+  }
+  
+  /* Estilos para el logo */
+  .logo {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99;
+    padding: 10px;
+  }
+  
+  .nav-group {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .dropdown-btn {
+    background-color: #5b3d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+  .dropdown-btn i {
+    margin-left: 5px;
+  }
+  
+  .dropdown-container {
+    display: none;
+    background-color: #d0b4f1;
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+  .dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+}
+
+
+  .dropdown-container a:hover {
+    background-color: #bfa8e3;
+  }
+  
+  .dropdown-btn.active + .dropdown-container {
+    display: block;
+  }
+  
+  /* Ensuring responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  }
+  
+  /* Estilos para Reportes */
+  .reportes-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 60px auto; /* Centra el contenedor horizontalmente y ajusta el margen superior */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+  }
+  
+  .reportes-page h1 {
+    color: #48257f;
+    text-align: center;
+  }
+  
+  .reportes-filtros {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  .reportes-filtros label {
+    margin:  10px;
+    align-self: center;
+  }
+  
+  .reportes-filtros input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 10px;
+    width: 90%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #8d5ec0; 
+    color: white;
+  }
+  
+  .reportes-descarga {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .reportes-descarga .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #5b3d99;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reportes-descarga .btn:hover {
+    background-color: #48257f;
+  }
+  .total-g
+  {
+    background-color: rgb(222, 220, 149);
+  }
+  .sales-buttons {
+    background-color: #D291BC; 
+    border-color: #D291BC;
+    color: #ffffff;
+    border-radius: 8px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    margin-top: 2em;
+  }
+
+  .sales-buttons:hover {
+    background-color: #B565A7; 
+    border-color: #B565A7;
+  }

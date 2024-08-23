@@ -1,0 +1,286 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Agrupación de botones de navegación */
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+/* Botón de dropdown */
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+/* Contenedor del dropdown */
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Enlaces dentro del dropdown */
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+
+.dropdown-container a:hover {
+  background-color: #bfa8e3;
+}
+
+/* Mostrar el dropdown cuando está activo */
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+  margin-top: 90px; /* Espacio superior para evitar sobreposición con la barra de navegación */
+  padding: 20px; /* Espacio interno para mejor presentación */
+  background-color: #f5f5f5; /* Fondo claro para contraste */
+  width: 90%; /* Ancho completo del contenedor */
+  max-width: 1200%; /* Ancho máximo para mantener el tamaño contenido */
+  height: auto; /* Altura automática para adaptarse al contenido */
+  margin-left: auto; /* Centrar horizontalmente */
+  margin-right: auto; /* Centrar horizontalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  flex-direction: column; /* Colocar los elementos en columna */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  justify-content: center; /* Centrar verticalmente el contenido */
+  overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
+}
+
+/* Estilos para el contenedor de contenido */
+.container {
+  padding: 10px;
+  background-color: #d6bdec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ancho completo del contenedor */
+  max-width: 1000%; /* Ancho máximo para mantener el tamaño contenido */
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
+}
+
+
+/* Estilos para los encabezados */
+h2, h3 {
+  color: #333;
+}
+h1{
+  color: #5b3d99
+}
+/* Estilos para la tabla */
+.table {
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Estilos para los botones */
+.btn {
+  margin-right: 5px;
+ 
+}
+
+/* Estilos para los grupos de campos en una línea */
+.form-group-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre los campos */
+  margin-bottom: 20px; /* Espacio inferior para separar de otros grupos */
+}
+
+.form-group {
+  flex: 1; /* Hacer que los campos se expandan para ocupar el espacio disponible */
+  min-width: 200px; /* Ancho mínimo para mantener una buena apariencia */
+}
+
+.form-control {
+  width: 90%;
+  padding: 18px;
+  border-radius: 4px;
+  border: 3px solid #a3a2a2;
+  border-radius: 10px;
+  font-size: 1.5em;
+  
+}
+
+.btn-secondary {
+  background-color: #5b3d99;
+  border-color: #5b3d99;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 27px; 
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.mt-3, .btn-info {
+  background-color: #5b3d99; 
+  border-color: #5b3d99;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  font-size: 21px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 50px; 
+  font-size: 21px;
+  display: block;
+  margin: 0 auto;
+}
+.btn-primary:hover {
+  background-color: #280c1f; 
+  border-color: #470832;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 10px 50px; 
+  font-size: 21px;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-warning {
+  background-color: #5b3d99; 
+  border-color: #5b3d99;
+  border-radius: 8px; 
+  padding: 10px 50px; 
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 9.6em;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 8px; 
+  padding: 10px 50px; 
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 9.6em;
+}
+
+/* Estilos para la tabla con franjas */
+.table-striped {
+  width: 100%;
+}
+
+.table-striped th, .table-striped td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-striped th {
+  background-color: #9575cd;
+  color: white;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #e1bee7;
+}
+
+/* Asegurar la responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.alert-danger{
+  color: red;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/* Aumenta el tamaño de la letra para las etiquetas */
+.form-group label {
+  font-size: 20px; /* Cambia a tu preferencia */
+  color: #0b0b0b; /* Color del texto */
+}
+
+/* Aumenta el tamaño de la letra para los campos de entrada y el select */
+.form-control {
+  font-size: 27px; /* Cambia a tu preferencia */
+}
+/* Cambia el tamaño y color del texto para los mensajes de error */
+.text-danger {
+  font-size: 20px; /* Cambia a tu preferencia */
+  color: #ff0000; /* Color rojo para el error */
+}

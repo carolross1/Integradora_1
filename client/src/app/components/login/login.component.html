@@ -1,0 +1,25 @@
+<div class="waves">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+<div class="login-container">
+   <div class="login-box index-page">
+      <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+      <h1>ABARROTES EL PERRÓN</h1>
+      <h2>Iniciar Sesión</h2>
+      <form (ngSubmit)="login()">
+        <div class="textbox">
+          <input type="text" id="usuario" [(ngModel)]="usuario" name="usuario" placeholder="Ingrese nombre de usuario" required>
+        </div>
+        <div class="textbox">
+          <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" placeholder="Ingrese contraseña" required>
+        </div>
+        <div *ngIf="errorMessage">
+          <p class="error">{{ errorMessage }}</p>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+   
+  </div>

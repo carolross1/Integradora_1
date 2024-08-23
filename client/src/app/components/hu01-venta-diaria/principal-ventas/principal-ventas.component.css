@@ -1,0 +1,307 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99;
+    padding: 10px;
+}
+
+.nav-group {
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-btn {
+    background-color: #5b3d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.dropdown-btn i {
+    margin-left: 5px;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #d0b4f1;
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    z-index: 1;
+}
+
+.dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+}
+
+
+
+.dropdown-container a:hover {
+    background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+    display: block;
+}
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+/*----------------------------------------------------------------------------------------------*/
+
+/* Estilos para el contenido de ventas */
+.sales-content {
+    background-color: #ccbaef;
+    border: 2px solid #a790cf;
+    padding: 30px;
+    width: 100%;
+    height: calc(100vh - 60px); /* Ajuste para la barra de navegación */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-top: 60px; /* Ajustado espacio para la barra de navegación */
+}
+
+.sales-title {
+    background-color: rgb(156, 105, 215);
+    padding: .8em 0.5em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el botón de notificaciones */
+.notification-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: white;
+
+}
+
+.notification-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.5em 0.7em;
+    font-size: 1.75em;
+    position:inherit;
+    top: -20px;
+    right: -20px;
+}
+
+.fa-bell {
+    font-size: 2em;
+}
+
+.barcode-input {
+    font-size: 1.6em;
+    padding: 0.5em;
+    width: 100%; 
+}
+
+.sales-table-content {
+    margin-top: 1em;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sales-barcode {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    max-height: 40px;
+}
+
+.sales-barcode .barcode-icon {
+    margin-right: 0.5em;
+}
+
+.sales-barcode input {
+    padding: 0.9em;
+    border: 3px solid #BDBDBD;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1.6em;
+}
+
+.sales-table-container {
+    max-height: 40vh;
+    overflow-y: auto;
+    margin-top: 1em;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #DAE5F4;
+}
+
+.sales-table thead {
+    background-color: rgb(156, 105, 215);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.sales-table th, 
+.sales-table td {
+    padding: 0.5em;
+    border: 1px solid rgb(245, 240, 240);
+    text-align: center;
+}
+
+.sales-totals {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    width: 100%;
+    font-size: 1.2em;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.totals-left, 
+.totals-right {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.totals-left div, 
+.totals-right div {
+    background-color: rgb(235, 190, 235);
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+}
+
+.recibido-input {
+    font-size: 1.2em;
+    padding: 0.3em;
+    width: 70%;
+    border: none;
+    background-color: rgb(235, 190, 235);
+}
+
+.cambio-input {
+    font-size: 1.2em;
+}
+
+.sales-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.sales-buttons button, 
+.sales-buttons select {
+    background-color: #D291BC; 
+    border-color: #e490c8; 
+    padding:15px 35px;
+    border: none;
+
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 1.9em;
+}
+
+.sales-buttons button:hover, 
+.sales-buttons select:hover {
+        background-color: #D291BC; 
+        border-color: #D291BC;
+        color: #ffffff;
+        text-decoration: double;
+      }
+      
+
+.sales-bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5em;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.sales-bottom-buttons button {
+    background-color: #D291BC;
+    border: none;
+    padding: 0.8em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+}
+
+.sales-bottom-buttons button:hover {
+    background-color: #18bc93;
+}
+
+.barcode-icon .fa-barcode {
+    font-size: 3.8em;
+}
+.error {
+    border-radius: 2px solid red; /* Cambia el borde a rojo */
+    background-color: #e79a9a; /* Opcional: fondo ligeramente rojo */
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    font-size:larger;
+  }

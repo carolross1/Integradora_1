@@ -1,0 +1,187 @@
+[33mcommit 22d74a2afb680741a5aa4ab5665e19b46258ffe2[m[33m ([m[1;36mHEAD -> [m[1;32mavances-modificaciones[m[33m, [m[1;31morigin/avances-modificaciones[m[33m)[m
+Author: Carol Rios <carolrios347@gmail.com>
+Date:   Sun Aug 4 15:09:21 2024 -0600
+
+    Frontend con todos los cambios solicitados
+
+[33mcommit e4a340c0ef455cbc387e971f4494aecd802fc216[m
+Author: Carol Rios <carolrios347@gmail.com>
+Date:   Thu Aug 1 22:27:22 2024 -0600
+
+    Mas modificaciones
+
+[33mcommit 702fee65ac6e1d912331bd2fe8b7c515d8128e44[m
+Author: Carol Rios <carolrios347@gmail.com>
+Date:   Thu Aug 1 00:18:16 2024 -0600
+
+    Se modificaron algunas de las pantallas y se creo un menu  que se utilizara para todos los componentes
+
+[33mcommit 8e38885f282538e7eb939c33dc046814861ccf30[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 8cb6035 9a553c8
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Wed Jul 31 13:08:28 2024 -0600
+
+    Merge branch 'main' into funcionando_POSTMAN
+
+[33mcommit 8cb6035f864e85f2c9b08fa3f515612dff415839[m[33m ([m[1;31morigin/funcionando_POSTMAN[m[33m)[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Wed Jul 31 12:59:31 2024 -0600
+
+    La interfaz de la venta ya registra en la DB una venta al igual que la ruta para detalle_Venta ya funciona, agregue el back-end de categorias, producto y factura
+
+[33mcommit 21bc9bd47e7e2e341ab141d56f45dd1feb8bfee9[m[33m ([m[1;31morigin/carmen-hu01-venta-diaria[m[33m)[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Tue Jul 23 03:02:16 2024 -0600
+
+    He estado trabajando con la interfaz donde se haran las ventas de la tienda y la logica detras, si se venden ciertos productos ir disminuyendolos del stock de productos, tambien hice que se generara el ticke aunque me hace falta que el id_Venta se registre en el ticket, solo eso lo demas esta en buen funcionamiento
+
+[33mcommit 9a553c89fece8d73eda5366c9bae3c2e0bca9dff[m
+Author: CatalinaDM <156236597+CatalinaDM@users.noreply.github.com>
+Date:   Mon Jul 22 01:15:54 2024 -0600
+
+    Update database.sql
+    
+    Modifique el nombre del  atributo codigo_barras a codigo_Barras  de la tabla producto ya que lo modifique en la terminal  pero el script no lo hice
+
+[33mcommit 59e207947ebb94f3d514ba67c538f8bf0b6db8a1[m
+Merge: f85e2b7 8b71ac5
+Author: CatalinaDM <156236597+CatalinaDM@users.noreply.github.com>
+Date:   Mon Jul 22 01:11:17 2024 -0600
+
+    Merge pull request #7 from CatalinaDM/Avances-cati-notificaciones
+    
+    Mande a llamar los productos que tuvieran menor stock que la cantidad…
+
+[33mcommit 8b71ac5c80b69fe14e7ba4b88f4d6ffcf36ef7d5[m[33m ([m[1;31morigin/Avances-cati-notificaciones[m[33m)[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 22 01:09:14 2024 -0600
+
+    Mande a llamar los productos que tuvieran menor stock que la cantidad minima permitida, además relice la función para ver cuantas notificaciones se tienen pendientes en la ventana princiapl y el crud de productos le agregue un atributo que olvide modificar
+
+[33mcommit f85e2b7d36fe6c2906536ed84853535602f5c5c6[m[33m ([m[1;31morigin/catiDM-productos[m[33m)[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Thu Jul 18 14:55:59 2024 -0600
+
+    Realice el frontend y backend de productos para poder hacer un crud, ya se pueden visualizar
+
+[33mcommit d4cc2ee8323882c998dec7ab4a7e1f04767cde37[m
+Merge: 611aa4a 1022fc4
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 8 14:10:19 2024 -0600
+
+    Merge branch 'avances-catalina'
+
+[33mcommit 1022fc414a917cfd0b60bc25943dd184aa22cb26[m[33m ([m[1;31morigin/avances-catalina[m[33m)[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 8 14:00:34 2024 -0600
+
+    Este PR añade las rutas iniciales y las rutas de la historia de usuario de corte de caja a nuestro servidor Express. Ahora tenemos dos rutas principales:
+    - La ruta raíz ('/') que devuelve un mensaje "Soy yo".
+    - La ruta '/api/cortecaja' que devuelve un mensaje "Ya responde".
+    
+    He creado una clase `IndexRoutes` que configura la ruta raíz y devuelve el mensaje "Soy yo".
+    2) He creado una clase `cortecajaRoutes` que configura la ruta '/api/cortecaja' y devuelve el mensaje "Ya responde".
+    3) Se ha actualizado el archivo `index.ts` para utilizar estas rutas.
+    
+    ### Pruebas Realizadas
+    - Se ha probado accediendo a `http://localhost:3000` y se ha verificado que muestra "Soy yo".
+    - Se ha probado accediendo a `http://localhost:3000/api/cortecaja` y se ha verificado que muestra "Ya responde".
+    
+    ### Cómo Probarlo
+    1. Ejecuta el servidor con `npm run dev` y `npm run build`.
+    2. Abre tu navegador y accede a `http://localhost:3000` para ver la ruta inicial.
+    3. Abre tu navegador y accede a `http://localhost:3000/api/cortecaja` para ver la ruta.
+    
+    Además, agregué la carpeta database con el archivo database.sql y agregué el script de la base de datos.
+    Sigo realizando cambios en los archivos que competen cortecaja para que ya se conecte con la base de datos, pero solo llevo avances aun no termino.
+
+[33mcommit 611aa4a427b62f91b104b074decaa37ee26a0e38[m
+Merge: e6bd0ad 37e58c7
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 8 13:55:13 2024 -0600
+
+    Merge branch 'main' of https://github.com/CatalinaDM/Integradora_1
+
+[33mcommit bc6d02612272430f73704cade3e03c0e9b3cda68[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 8 03:27:55 2024 -0600
+
+    Este PR añade las rutas iniciales y las rutas de la historia de usuario de corte de caja a nuestro servidor Express. Ahora tenemos dos rutas principales:
+    - La ruta raíz ('/') que devuelve un mensaje "Soy yo".
+    - La ruta '/api/cortecaja' que devuelve un mensaje "Ya responde".
+    
+    He creado una clase `IndexRoutes` que configura la ruta raíz y devuelve el mensaje "Soy yo".
+    2) He creado una clase `cortecajaRoutes` que configura la ruta '/api/cortecaja' y devuelve el mensaje "Ya responde".
+    3) Se ha actualizado el archivo `index.ts` para utilizar estas rutas.
+    
+    ### Pruebas Realizadas
+    - Se ha probado accediendo a `http://localhost:3000` y se ha verificado que muestra "Soy yo".
+    - Se ha probado accediendo a `http://localhost:3000/api/cortecaja` y se ha verificado que muestra "Ya responde".
+    
+    ### Cómo Probarlo
+    1. Ejecuta el servidor con `npm run dev` y `npm run build`.
+    2. Abre tu navegador y accede a `http://localhost:3000` para ver la ruta inicial.
+    3. Abre tu navegador y accede a `http://localhost:3000/api/cortecaja` para ver la ruta.
+    
+    Además, agregué la carpeta database con el archivo database.sql y agregué el script de la base de datos.
+    Sigo realizando cambios en los archivos que competen cortecaja para que ya se conecte con la base de datos, pero solo llevo avances aun no termino.
+
+[33mcommit e42fddd8b6e9d16941fcfaf6196b365e49747748[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jul 8 03:19:20 2024 -0600
+
+    Este PR añade las rutas iniciales y las rutas de la historia de usuario de corte de caja a nuestro servidor Express. Ahora tenemos dos rutas principales:
+    - La ruta raíz ('/') que devuelve un mensaje "Soy yo".
+    - La ruta '/api/cortecaja' que devuelve un mensaje "Ya responde".
+    
+    He creado una clase `IndexRoutes` que configura la ruta raíz y devuelve el mensaje "Soy yo".
+    2) He creado una clase `cortecajaRoutes` que configura la ruta '/api/cortecaja' y devuelve el mensaje "Ya responde".
+    3) Se ha actualizado el archivo `index.ts` para utilizar estas rutas.
+    
+    ### Pruebas Realizadas
+    - Se ha probado accediendo a `http://localhost:3000` y se ha verificado que muestra "Soy yo".
+    - Se ha probado accediendo a `http://localhost:3000/api/cortecaja` y se ha verificado que muestra "Ya responde".
+    
+    ### Cómo Probarlo
+    1. Ejecuta el servidor con `npm run dev` y `npm run build`.
+    2. Abre tu navegador y accede a `http://localhost:3000` para ver la ruta inicial.
+    3. Abre tu navegador y accede a `http://localhost:3000/api/cortecaja` para ver la ruta.
+    
+    Además, agregué la carpeta database con el archivo database.sql y agregué el script de la base de datos.
+    Sigo realizando cambios en los archivos que competen cortecaja para que ya se conecte con la base de datos, pero solo llevo avances aun no termino.
+
+[33mcommit 37e58c7735dd728756683d9f8db816655b06faba[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Sat Jul 6 21:20:36 2024 -0600
+
+    Realice modificación en la estructura de los componentes y los acomode dentro de modulos para llevar un control y también hice modificion en proveedores para hacerlo en un solo componente el CRUD ya lee los datos que se le ponen en el archivo .json mientras tenemos la confirmación de la base de datos
+
+[33mcommit cec53cbb8e5d51cc8e4c55a1105a9ca624bc6859[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jun 24 15:45:12 2024 -0600
+
+    Intento
+
+[33mcommit e6bd0ad63c12208653b882db9b5edccfd3371b33[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Mon Jun 24 15:14:05 2024 -0600
+
+    Realice avance de HU3 Carmen Delgado
+
+[33mcommit 89b9194d58d4d1cb19ee6c59de51e5860246d789[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Thu Jun 20 20:27:18 2024 -0600
+
+    Segundo avence de Interfaces en HTML del punto de ventas
+
+[33mcommit 101dace398411387e9297732fdb8245d7d4b8626[m
+Author: CatalinaDM <catidelgadomanzano0@gmail.com>
+Date:   Thu Jun 20 19:59:49 2024 -0600
+
+    Decretamos que esta sea la buena
+
+[33mcommit 0531b83b63c3a2abbbfa52593ffbe9062d4ea5ed[m
+Author: CatalinaDM <catidelgadomanzano1@gmail.com>
+Date:   Sat Jun 15 00:09:11 2024 -0600
+
+    Avance Equipo:Punto de Venta INTERFACES

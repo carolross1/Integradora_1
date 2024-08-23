@@ -1,0 +1,207 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px; /* Ajusta la altura del logo */
+  width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+.dropdown-container a:hover {
+  background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
+}
+
+/* Estilos para la tabla y botones de acciones */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  
+    }
+    .main-container{
+      padding: 20px;
+      background-color: #e9edf0;
+      margin: 60px auto; /* Centra el contenedor horizontalmente y ajusta el margen superior */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 1600px; /* Ajusta el ancho máximo del contenedor */
+    }
+    thead th {
+      background-color: #8d5ec0;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    tbody td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    tbody tr:hover {
+      background-color: #ecc9f3;
+    }
+    
+    td button {
+      margin-right: 5px;
+    }
+    .edit-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      margin-left: 13%;
+  
+    }
+    
+    .edit-button:hover {
+      background-color: #0056b3;
+    }
+    
+    .delete-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #dc3545;
+      color: white;
+      margin-left: 20%;
+
+    }
+    
+    .delete-button:hover {
+      background-color: #c82333;
+    }
+    
+    .search-container {
+      margin-bottom: 20px;
+    }
+    
+    .search-input-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .search-input {
+      padding: 10px;
+      border: 1px solid #b7b0df; /* Color del borde */
+      border-radius: 4px;
+      width: 60%;
+      font-size: 16px;
+      margin-right: 10px;
+      margin-left: 17em;
+      background-color: #ccbaef; /* Color de fondo */
+      align-items: center;
+    }
+    
+    .search-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #5b3d99; /* Color de fondo */
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    
+    .search-button i {
+      margin-right: 5px;
+    }
+    
+    .search-button:hover {
+      background-color: #48257f; /* Color de fondo al pasar el mouse */
+    }
+    .nuevo{
+      background-color: #D291BC; 
+      border-color: #D291BC;
+      color: #ffffff;
+      border-radius: 8px; 
+      padding: 15px 40px; 
+      font-size: 16px;
+      margin-top: 2em;
+      text-decoration: double;
+    }
+    .nuevo:hover{
+      background-color: #ea9894; 
+      border-color: #f09a79;
+      color: #ffffff;
+      border-radius: 8px; 
+      padding: 15px 40px; 
+      font-size: 16px;
+      margin-top: 2em;
+    }
+    

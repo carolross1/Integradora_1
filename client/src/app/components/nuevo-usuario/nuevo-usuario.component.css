@@ -1,0 +1,156 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el logo horizontalmente */
+  margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+  height: 50px; /* Ajusta la altura del logo */
+  width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b3d99;
+  padding: 10px;
+}
+
+.nav-group {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-btn {
+  background-color: #5b3d99;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+
+.dropdown-btn i {
+  margin-left: 5px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #d0b4f1;
+  border-radius: 5px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-container a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+.dropdown-container a:hover {
+  background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+  display: block;
+}
+/* Ensuring responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
+}
+
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input, select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+button[type="submit"] {
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 20px 120px; 
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+
+button[type="submit"]:hover {
+  background-color: #e0a9d7;
+}
+.cancelar{
+  background-color: #D291BC; 
+  border-color: #D291BC;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 15px 40px; 
+  font-size: 16px;
+  margin-top: 2em;
+}
+.cancelar:hover{
+  background-color: #ea9894; 
+  border-color: #f09a79;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 15px 40px; 
+  font-size: 16px;
+  margin-top: 2em;
+}
+.error {
+  color: red;
+  font-size: 0.875rem;
+}
+.highlighted {
+  background-color: #f2d4f4; /* Fondo azul claro */
+  border: 2px solid #9f518f; /* Borde azul */
+  color: #15020e; /* Texto azul */
+}

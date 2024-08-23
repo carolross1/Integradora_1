@@ -1,0 +1,155 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99;
+    padding: 10px;
+}
+
+.nav-group {
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-btn {
+    background-color: #5b3d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn i {
+    margin-left: 5px;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #d0b4f1;
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-container a:hover {
+    background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+    display: block;
+}
+
+/* Asegura la responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+.cancelar-page {
+    padding: 20px; /* Reduce el padding */
+    background-color: #f9f9f9;
+    margin-top: 70px; /* Ajusta el margen superior */
+    max-width: 90%; /* Reduce el ancho máximo */
+    max-height: 1000px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    overflow: auto; /* Permite el desbordamiento con desplazamiento interno si es necesario */
+}
+
+.cancelar-page h1 {
+    color: #48257f;
+    text-align: center;
+    font-size: 1.5em; /* Reduce el tamaño de la fuente */
+}
+
+.cancelar-page form {
+    margin: 0 auto; /* Centra el formulario */
+    background-color: #fff;
+    padding: 15px; /* Reduce el padding */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cancelar-page form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #48257f;
+}
+
+.cancelar-page form select {
+    width: 100%;
+    padding: 8px; /* Reduce el padding */
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cancelar-page table {
+    border-collapse: collapse;
+    margin-top: 20px; /* Reduce el margen superior */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.cancelar-page th,
+.cancelar-page td {
+    border: 1px solid #ccc;
+    padding: 8px; /* Reduce el padding */
+    text-align: left;
+}
+
+.cancelar-page th {
+    background-color: coral;
+}
+
+/* Estilos para el botón de confirmación */
+.confirm-cancel-btn {
+    background-color: #5b3d99; /* Color de fondo */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1em; /* Tamaño de fuente */
+    display: block;
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+.confirm-cancel-btn:hover {
+    background-color: #C06080; /* Color de fondo al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}

@@ -1,0 +1,194 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-right: 30px; /* Ajusta el margen para mover el contenedor a la derecha */
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5b3d99;
+    padding: 10px;
+    align-items: center; /* Centra verticalmente los elementos dentro de la barra */
+}
+
+/* Estilos para los grupos de navegación */
+.nav-group {
+    position: relative;
+    margin-right: 10px;
+}
+
+.dropdown-btn {
+    background-color: #5b3d99;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn i {
+    margin-left: 5px;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #d0b4f1;
+    border-radius: 5px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-container a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-container a:hover {
+    background-color: #bfa8e3;
+}
+
+.dropdown-btn.active + .dropdown-container {
+    display: block;
+}
+
+/* Asegurando la responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+/* Estilos para la página de compras */
+.compras-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 80px auto; /* Centra el contenedor horizontalmente y agrega margen superior */
+    max-width: 900px; /* Ajusta el ancho máximo para centrar el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.compras-title {
+    color: #48257f;
+    font-size: 2em;
+    text-align: center; /* Centra el título horizontalmente */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.compras-header {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacio debajo del header */
+}
+
+.compras-date {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.entregas-recibe {
+    margin-top: 10px;
+}
+
+.entregas-recibe label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.entregas-recibe select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+.compra-barcode {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.barcode-icon {
+    margin-right: 10px;
+}
+
+.barcode-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.compra-table-content {
+    margin-top: 20px;
+}
+
+.compra-table-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal en dispositivos pequeños */
+}
+
+.compra-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compra-table th,
+.compra-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.compra-table th {
+    background-color: #5b3d99;
+    color: white;
+}
+
+.compra-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.compra-buttons button {
+    background-color: #5b3d99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.compra-buttons button:hover {
+    background-color: #48257f;
+}

@@ -1,0 +1,110 @@
+<div class="navbar">
+  <!-- Logo Redirigiendo al MENU -->
+  <a href="/menu" class="logo-link">
+    <img src="https://images.vexels.com/content/200165/preview/store-icon-stroke-bb4ae2.png" alt="Logo Abarrotes el Perrón" class="logo">
+  </a>
+  
+
+
+
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['ventas-compras']}" (click)="toggleDropdown('ventas-compras')">
+      Ventas & Compras <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['ventas-compras']">
+      <a routerLink="/principal"><i class="fas fa-home"></i> Ventas</a>
+      <a routerLink="/pedidosaproveedor"><i class="fas fa-shopping-cart"></i> Compras</a>
+      <a routerLink="/facturas"><i class="fas fa-file-invoice"></i> Factura</a>
+
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['proveedores-entregas']}" (click)="toggleDropdown('proveedores-entregas')">
+      Proveedores & Entregas <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['proveedores-entregas']">
+      <a routerLink="/proveedores"><i class="fas fa-truck"></i> Proveedores</a>
+      <a routerLink="/entregasproveedor"><i class="fas fa-shipping-fast"></i> Entregas</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['inventarios-reportes']}" (click)="toggleDropdown('inventarios-reportes')">
+      Inventarios & Reportes <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['inventarios-reportes']">
+      <a routerLink="/inventarios"><i class="fas fa-boxes"></i> Inventarios</a>
+      <a routerLink="/cortedecaja"><i class="fas fa-cash-register"></i> Corte Caja</a>
+      <a routerLink="/reportes"><i class="fas fa-chart-line"></i> Informes</a>
+    </div>
+  </div>
+  
+  <div class="nav-group">
+    <button class="dropdown-btn" [ngClass]="{'active': dropdownOpen['otros']}" (click)="toggleDropdown('otros')">
+      Otros <i class="fas fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-container" *ngIf="dropdownOpen['otros']">
+     <a routerLink="/ventas"><i class="fas fa-ticket-alt"></i> Ticket</a>
+    <a routerLink="/listausuario"><i class="fas fa-users"></i> Agregar Usuario</a>
+      <a routerLink="/productos"><i class="fas fa-box"></i> Agregar Productos</a>
+      <a routerLink="/categoria"><i class="fas fa-tags"></i> Categorías</a>
+      <a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+  </div>
+</div>
+
+<!--LISTA DE CATEGORIAS-->
+<div class="main-container">
+  <div class="container">
+    <h2>Lista de categorías</h2>
+    
+    <!-- Campo para buscar categorías -->
+     <!-- Campo para buscar categorías -->
+  <div class="search-container">
+    <div class="search-input-container">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar por nombre" class="search-input" (input)="searchCategorias()">
+      <button (click)="searchCategorias()" class="search-button">
+        <i class="fa fa-search"></i> Buscar
+      </button>
+    </div>
+      </div>
+
+    <!-- Campo para agregar una nueva categoría -->
+    <div class="add-container">
+      <h2>Crear nueva categoria</h2> 
+      <input type="text" [(ngModel)]="nombreCategoria" placeholder="Nombre de la nueva categoría" class="search-input">
+      <div *ngIf="errorMessage">
+        <p class="error">{{ errorMessage}}</p>
+      </div>
+      <button (click)="addCategoria()" class="add-button">Nueva categoría</button>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>
+            <ng-container *ngIf="!categoria.editing">{{ categoria.nombre }}</ng-container>
+            <ng-container *ngIf="categoria.editing">
+              <input [(ngModel)]="categoria.nombre" class="edit-input">
+              <button (click)="saveCategoria(categoria)" class="save-button">Guardar</button>
+            </ng-container>
+          </td>
+          <td>
+            <button (click)="editCategoria(categoria)" class="edit-button">✎</button>
+          </td>
+          <td>
+            <button (click)="deleteCategoria(categoria.id_Categoria!)" class="delete-button">🗑</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
